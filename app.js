@@ -13,7 +13,11 @@ app
   .use(loger("dev"))
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: false }))
-  .use("/", routeNav)
+  .get("/",function(req, res) {
+    res.send('Hello Express');
+  }
+  )
+  // .use("/", routeNav)
   .listen(PORT, () => {
     console.log(`running in port:${PORT}`);
   })
